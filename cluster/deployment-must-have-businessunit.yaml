@@ -1,0 +1,15 @@
+
+apiVersion: constraints.gatekeeper.sh/v1beta1
+kind: K8sRequiredLabels
+metadata:
+  name: deployment-must-have-business-unit
+spec:
+  match:
+    kinds:
+      - apiGroups: ["apps"]
+        kinds: ["Deployment"]
+  parameters:
+    labels:
+      - key: "businessunit"
+    message: "Deployment objects should have an 'function' label indicating which business unit owns it"
+    
