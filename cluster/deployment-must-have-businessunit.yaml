@@ -9,7 +9,6 @@ spec:
       - apiGroups: ["apps"]
         kinds: ["Deployment"]
   parameters:
-    labels:
-      - key: "businessunit"
+    labels: ["app", "businessunit"]
     message: "Deployment objects should have an 'function' label indicating which business unit owns it"
     
